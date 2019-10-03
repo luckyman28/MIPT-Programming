@@ -13,7 +13,8 @@ int main(){
 			printf("u %d rodilsya rebionok nomer %d\n", getppid(), getpid());
 		}
 		else{
-			pid_t wait(int* status);
+			int* status;
+			pid_t wait(status);
 			sleep(1);
                         printf("u %d zakonchilsya rebionok nomer %d , svetlaya pamiat\n", getpid(), pid);
                         sleep(1);

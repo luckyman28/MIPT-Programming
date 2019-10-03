@@ -1,0 +1,41 @@
+//       int check = 0;
+  //      line[i].token = (char**)calloc(100, sizeof(char*));
+    //    fscanf(file, "%d", &line[i].waittime);
+      //  int k = 2;
+        //line[i].token[0] = (char*)calloc(20, sizeof(char));
+        //line[i].token[1] = (char*)calloc(20, sizeof(char));
+        //strcpy(line[i].token[0], "timeout");
+        //strcpy(line[i].token[1], "5");
+//
+  //      for(;;)
+    //    {
+      //      line[i].token[k] = (char*)calloc(20, sizeof(char));
+        //    for(int j = 0;;j++)
+          //  {
+            //    fscanf(file, "%c", &line[i].token[k][j]);
+              //  if (line[i].token[k][j] == ' ' && j == 0)
+               // {
+                 //   j--;
+                  //  continue;
+                //}
+//
+  //              if (line[i].token[k][j] == ' ')
+    //            {
+      //              line[i].token[k][j] = '\0';
+        //            k++;
+          //          break;
+            //    }
+              //  else if (line[i].token[k][j] == '\n')
+                //{
+                  //  line[i].token[k][j] = '\0';
+                    //line[i].token[k + 1] = (char *)0;
+                    //check = 1;
+                    //break;
+                //}
+            //}
+            //if (check)
+              //  break;
+        //}
+    //}
+//}
+
