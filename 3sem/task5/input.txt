@@ -1,0 +1,6 @@
+5
+3 echo Hello, World.
+4 ls
+5 ls -al
+3 pwd
+1 sleep 10
