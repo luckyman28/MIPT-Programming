@@ -12,25 +12,21 @@ typedef struct mystruct
 } Line;
 
 void LineScan(int num, FILE *file, Line *line){
-	for(int i = 0; i < num; i++) 
+	for(int i = 0; i < num; i++)
     {
-	line[i].token = (char**)calloc(100, sizeof(char*));
+	line[i].token = (char**)malloc(100 * sizeof(char*));
 	char* str = (char*)malloc(100 * sizeof(char));
 	char* delim = " \n";
 	fgets(str, 100, file);
 	char* first = strtok(str, delim);
 	line[i].waittime = atoi(first);
 	first = strtok(str, delim);
-	int k = 2;
-	line[i].token[0] = (char*)calloc(20, sizeof(char));
-        line[i].token[1] = (char*)calloc(20, sizeof(char));
-        strcpy(line[i].token[0], "timeout");
-        strcpy(line[i].token[1], "5");
-        while (first != NULL){
-		line[i].token[k] = (char*)calloc(20, sizeof(char));
-                line[i].token[k] = first;
-                first = strtok(NULL, delim);
-		k++;
+	int k = 0;
+    while (first != NULL){
+    	line[i].token[k] = (char*)malloc(20 * sizeof(char));
+        line[i].token[k] = first;
+        first = strtok(NULL, delim);
+        k++;
         }
     }
 }
@@ -38,9 +34,9 @@ void LineScan(int num, FILE *file, Line *line){
 int main()
 {
     int num;
-    FILE *file = fopen("input.txt", "r");
-    fscanf(file, "%d", &num);
-    Line *line = (Line *)calloc(num, sizeof(Line));
+    FILE *file = fopen("/home/vasily/tesalin/MIPT-Programming/3sem/input.txt", "r");
+    fscanf(file, "%d\n", &num);
+    Line *line = (Line *)malloc(num * sizeof(Line));
     LineScan(num, file, line);
     for(int i = 0; i < num; i++)
     {
@@ -51,6 +47,6 @@ int main()
             execvp(line[i].token[0], line[i].token);
         }
     }
+    free(line);
     return 0;
 }
-
